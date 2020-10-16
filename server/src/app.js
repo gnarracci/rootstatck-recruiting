@@ -11,6 +11,7 @@ const env = require("node-env-file"); // .env file
 env(__dirname + "/.env");
 
 const authRoutes = require("./routes/auth.routes");
+const jobsRoutes = require("./routes/jobs.routes");
 
 // Settings
 app.set("port", process.env.PORT || 4000);
@@ -33,5 +34,6 @@ app.get("/", (req, res) => {
 
 // Routes
 app.use("/api/auth", authRoutes);
+app.use("/api/jobs", jobsRoutes);
 
 module.exports = app;
